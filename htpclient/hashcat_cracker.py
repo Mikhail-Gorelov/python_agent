@@ -374,7 +374,8 @@ class HashcatCracker:
         elif 'usePreprocessor' in task.get_task() and task.get_task()['usePreprocessor']:
             return self.preprocessor_keyspace(task, chunk)
         task = task.get_task()  # TODO: refactor this to be better code
-        full_cmd = self.callPath + " --keyspace --quiet " + update_files(task['attackcmd']).replace(task['hashlistAlias'] + " ", "") + ' ' + task['cmdpars']
+        # full_cmd = self.callPath + " --keyspace --quiet " + update_files(task['attackcmd']).replace(task['hashlistAlias'] + " ", "") + ' ' + task['cmdpars']
+        full_cmd = self.callPath + " " + update_files(task['attackcmd']).replace(task['hashlistAlias'] + " ", "") + ' ' + task['cmdpars']
         if 'useBrain' in task and task['useBrain']:
             full_cmd += " -S"
         if Initialize.get_os() == 1:
