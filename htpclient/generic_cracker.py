@@ -116,7 +116,7 @@ class GenericCracker:
 
     def measure_keyspace(self, task, chunk):
         task = task.get_task()
-        full_cmd = self.callPath + " keyspace " + task['attackcmd'].replace("-a " + task['hashlistAlias'] + " ", "")
+        full_cmd = self.callPath + " " + task['attackcmd'].replace("-a " + task['hashlistAlias'] + " ", "")
         if Initialize.get_os() == 1:
             full_cmd = full_cmd.replace("/", '\\')
         try:
